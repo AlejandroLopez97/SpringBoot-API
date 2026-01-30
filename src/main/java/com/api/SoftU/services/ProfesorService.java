@@ -41,7 +41,7 @@ public class ProfesorService {
         profesor.setNombre(request.getNombre());
         profesor.setEmail(request.getEmail());
         profesor.setEspecialidad(request.getEspecialidad());
-        profesor.setFechaDeCreacion(request.getFechaDeCreacion());
+        profesor.setFechaDeContratacion(request.getFechaDeContratacion());
         return profesor;
     }
 }

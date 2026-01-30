@@ -11,63 +11,53 @@ public class ProfesorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id_Profesor")
-    private int id;
+    private int Id_Profesor;
     @Column(name = "Nombre")
-    private String nombre;
+    private String Nombre;
     @Column(name = "Email")
-    private String email;
+    private String Email;
     @Column(name = "Especialidad")
-    private String especialidad;
+    private String Especialidad;
     @Column(name = "FechaDeContratacion")
-    private Date fechaDeCreacion;
+    private Date FechaDeContratacion;
 
-    public ProfesorModel() {
+    public int getId_Profesor() {
+        return Id_Profesor;
     }
 
-    public ProfesorModel(String nombre, String email, String especialidad, Date fechaDeCreacion) {
-        this.nombre = nombre;
-        this.email = email;
-        this.especialidad = especialidad;
-        this.fechaDeCreacion = fechaDeCreacion;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setId_Profesor(int id_Profesor) {
+        Id_Profesor = id_Profesor;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
     public String getEspecialidad() {
-        return especialidad;
+        return Especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+        Especialidad = especialidad;
     }
 
-    public Date getFechaDeCreacion() {
-        return fechaDeCreacion;
+    public Date getFechaDeContratacion() {
+        return FechaDeContratacion;
     }
 
-    public void setFechaDeCreacion(Date fechaDeCreacion) {
-        this.fechaDeCreacion = fechaDeCreacion;
+    public void setFechaDeContratacion(Date fechaDeContratacion) {
+        FechaDeContratacion = fechaDeContratacion;
     }
 }
