@@ -36,12 +36,15 @@ public class ProfesorService {
     }
 
     public ProfesorModel putProfesor(ProfesorModel request, int id){
-        ProfesorModel profesor = ProfesorRepository.findById(id).get();
-
+        Optional<ProfesorModel> optional = ProfesorRepository.findById(id);
+        if (optional.isEmpty()) {
+            return null;
+        }
+        ProfesorModel profesor = optional.get();
         profesor.setNombre(request.getNombre());
         profesor.setEmail(request.getEmail());
         profesor.setEspecialidad(request.getEspecialidad());
         profesor.setFechaDeContratacion(request.getFechaDeContratacion());
-        return profesor;
+        return ProfesorRepository.save(profesor);
     }
 }

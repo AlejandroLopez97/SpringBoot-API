@@ -3,6 +3,8 @@ package com.api.SoftU.controllers;
 import com.api.SoftU.models.ProfesorModel;
 import com.api.SoftU.services.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -39,8 +41,9 @@ public class ProfesorController {
     }
 
     @PutMapping(path = "/{id}")
-    public ProfesorModel put(@RequestBody ProfesorModel request, @PathVariable("id") int id){
-        return this.profesorService.putProfesor(request, id);
+    public ResponseEntity<ProfesorModel> put(@RequestBody ProfesorModel request, @PathVariable("id") int id){
+        ProfesorModel updated = this.profesorService.putProfesor(request, id);
+        return updated != null ? ResponseEntity.ok(updated) : ResponseEntity.notFound().build();
     }
 
 }

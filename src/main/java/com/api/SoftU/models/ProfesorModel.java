@@ -11,53 +11,57 @@ public class ProfesorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id_Profesor")
-    private int Id_Profesor;
-    @Column(name = "Nombre")
-    private String Nombre;
-    @Column(name = "Email")
-    private String Email;
-    @Column(name = "Especialidad")
-    private String Especialidad;
-    @Column(name = "FechaDeContratacion")
-    private Date FechaDeContratacion;
+    private int id;
 
-    public int getId_Profesor() {
-        return Id_Profesor;
+    @Column(name = "Nombre")
+    private String nombre;
+
+    @Column(name = "Email")
+    private String email;
+
+    @Column(name = "Especialidad")
+    private String especialidad;
+
+    @Column(name = "FechaDeContratacion")
+    private Date fechaDeContratacion;
+
+    public int getId() {
+        return id;
     }
 
-    public void setId_Profesor(int id_Profesor) {
-        Id_Profesor = id_Profesor;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getEspecialidad() {
-        return Especialidad;
+        return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
-        Especialidad = especialidad;
+        this.especialidad = especialidad;
     }
 
     public Date getFechaDeContratacion() {
-        return FechaDeContratacion;
+        return fechaDeContratacion;
     }
 
     public void setFechaDeContratacion(Date fechaDeContratacion) {
-        FechaDeContratacion = fechaDeContratacion;
+        this.fechaDeContratacion = fechaDeContratacion;
     }
 }
